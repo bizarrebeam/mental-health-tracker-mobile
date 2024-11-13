@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_tracker/screens/menu.dart';
 import 'package:mental_health_tracker/screens/moodentry_form.dart'; // Impor halaman MoodEntryFormPage
+import 'package:mental_health_tracker/screens/list_moodentry.dart'; // Impor halaman MoodEntryPage
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -59,7 +60,20 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MoodEntryFormPage(),
+                  builder: (context) => const MoodEntryFormPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Mood'),
+            // Bagian redirection ke MoodEntryPage
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MoodEntryPage(),
                 ),
               );
             },
